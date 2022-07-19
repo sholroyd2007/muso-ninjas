@@ -16,7 +16,7 @@
     <!-- song list -->
     <div class="song-list">
       <p>song list here</p>
-      <AddSong />
+      <AddSong v-if="ownership" :playlist="playlist" />
     </div>
     
   </div>
@@ -29,7 +29,7 @@ import getDocument from '@/composables/getDocument'
 import getUser from '@/composables/getUser'
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
-//import AddSong from '@/components/AddSong.vue'
+import AddSong from '@/components/AddSong.vue'
 export default {
   props: ['id'],
   components: {
